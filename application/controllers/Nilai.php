@@ -52,7 +52,7 @@ class Nilai extends CI_Controller {
 
         foreach ($id_peserta as $i => $id_peserta) {
             // cari nilai 
-            $cek = $this->Admin_model->get_one("nilai_peserta", ["id_peserta" => $id_peserta, "pelajaran" => $pelajaran]);
+            $cek = $this->Admin_model->get_one("nilai_peserta", ["id_kelas" => $id_kelas, "id_peserta" => $id_peserta, "pelajaran" => $pelajaran]);
             if($cek) {
                 $data = [
                     "nilai" => $nilai[$i]
