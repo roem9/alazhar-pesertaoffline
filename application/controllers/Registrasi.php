@@ -20,6 +20,7 @@
                 'nama_indo' => $this->input->post('nama_indo'),
                 't4_lahir_indo' => $this->input->post('t4_lahir_indo'),
                 'tgl_lahir' => $this->input->post('tgl_lahir'),
+                'jk' => $this->input->post('jk'),
                 'desa_kel_indo' => $this->input->post('desa_kel_indo'),
                 'kec_indo' => $this->input->post('kec_indo'),
                 'kota_kab_indo' => $this->input->post('kota_kab_indo'),

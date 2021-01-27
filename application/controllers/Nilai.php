@@ -43,38 +43,6 @@ class Nilai extends CI_Controller {
             echo "link error";
         }
     }
-
-    public function input_nilai(){
-        $id_kelas = $this->input->post("id_kelas");
-        $pelajaran = $this->input->post("pelajaran");
-        $id_peserta = $this->input->post("id");
-        $nilai = $this->input->post("nilai");
-
-        foreach ($id_peserta as $i => $id_peserta) {
-            // cari nilai 
-            $cek = $this->Admin_model->get_one("nilai_peserta", ["id_kelas" => $id_kelas, "id_peserta" => $id_peserta, "pelajaran" => $pelajaran]);
-            if($cek) {
-                $data = [
-                    "nilai" => $nilai[$i]
-                ];
-
-                $this->Admin_model->edit_data("nilai_peserta", ["id" => $cek['id']], $data);
-            } else {
-                $data = [
-                    "id_kelas" => $id_kelas,
-                    "id_peserta" => $id_peserta,
-                    "nilai" => $nilai[$i],
-                    "pelajaran" => $pelajaran
-                ];
-
-                $this->Admin_model->add_data("nilai_peserta", $data);
-            }
-        }
-        
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert"><i class="fa fa-check-circle text-success mr-1"></i> Berhasil menginputkan nilai peserta<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        redirect($_SERVER['HTTP_REFERER']);
-    }
-
 }
 
 /* End of file Nilai.php */

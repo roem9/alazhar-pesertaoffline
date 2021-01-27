@@ -8,7 +8,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="p-5">
-								<div class="col-12 d-flex justify-content-center mb-1">
+								<div class="text-center mb-3">
 									<img src="<?= base_url()?>assets/img/logo.png" width="75" class="img-fluid img-shadow">
 								</div>
 								<div class="text-center">
@@ -39,6 +39,14 @@
                                         <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control form-control-sm" required>
                                     </div>
                                     <div class="form-group">
+                                        <label for="jk">Jenis Kelamin</label>
+                                        <select name="jk" id="jk" class="form-control form-control-sm">
+                                            <option value="">Pilih Jenis Kelamin</option>
+                                            <option value="Laki-Laki">Laki-Laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="desa_kel_indo">Desa / Kelurahan</label>
                                         <input type="text" name="desa_kel_indo" id="desa_kel_indo" class="form-control form-control-sm" required>
                                     </div>
@@ -57,11 +65,8 @@
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="text" name="email" id="email" class="form-control form-control-sm">
+                                        <small id="emailHelp" class="form-text text-danger">*email tidak wajib diisi</small>
                                     </div>
-                                    <!-- <div class="form-group">
-                                        <label for="detail_pembayaran">Detail Pembayaran</label>
-                                        <textarea name="detail_pembayaran" id="detail_pembayaran" class="form-control form-control-sm">pendaftaran, keamanan, kaos, asrama</textarea>
-                                    </div> -->
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" class="btn btn-sm btn-primary" id="btnSimpan">Simpan</button>
                                     </div>
